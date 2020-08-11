@@ -1,0 +1,115 @@
+<html>
+<head>
+<style>
+body{
+background-image: url("images.jpg");
+}
+</style>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0">
+<title>employee reg</title>
+<link rel="stylesheet" href="permission_files/css3menu1/style.css" type="text/css" /><style type="text/css">._css3m{display:none}</style>
+<script>
+function validate()
+{
+var a = document.f.fname.value;
+var b = document.f.pwd.value;
+var c = document.f.cpwd.value;
+var d = document.f.age.value;
+var e = document.f.mob.value;
+if(a=="")
+{
+alert("Fullname filed should not be empty!!!");
+document.f.fname.focus();
+return false;
+}
+if(a.length<5)
+{
+alert("Fullname should be more than or equal to 5 characters!!!");
+document.f.fname.focus();
+return false;
+}
+if(b.length==0)
+{
+alert("Password filed should not be empty!!!");
+document.f.pwd.focus();
+return false;
+}
+if(b.length<5)
+{
+alert("Password should be more than or equal to 5 characters!!!");
+document.f.pwd.focus();
+return false;
+}
+if(c!=b)
+{
+alert("Password and Confirm Password must be equal!!!");
+document.f.cpwd.focus();
+return false;
+}
+if(d=="")
+{
+alert("Age filed should not be empty!!!");
+document.f.age.focus();
+return false;
+}
+if(isNaN(d))
+{
+alert("Age filed must be a number!!!");
+document.f.age.focus();
+return false;
+}
+if(d<18)
+{
+alert("Age should be greater than or eqaul to 18!!!");
+document.f.age.focus();
+return false;
+}
+if(e=="")
+{
+alert("Mobile No filed should not be empty!!!");
+document.f.mob.focus();
+return false;
+}
+if(isNaN(e))
+{
+alert("Mobile no must be a number!!!");
+document.f.mob.focus();
+return false;
+}
+if(e.length!=10)
+{
+alert("Mobile no contains 10 digits only!!!");
+document.f.mob.focus();
+return false;
+}
+if(e.charAt(0)!='7' && e.charAt(0)!='8' && e.charAt(0)!='9')
+{
+alert("Mobile no must be started with 7 or 8 or 9!!!");
+document.f.mob.focus();
+return false;
+}
+if(!(document.f.rules.checked))
+{
+alert("You must select terms and conditions");
+return false;
+}
+}
+</script>
+</head>
+<h1 align=center style=color:blue>EMPLOYEE REGISTRATION</h1>
+<center>
+<form name="f" action="Employee.jsp" method="post" onsubmit="return validate()">
+<input type="text" name="id" placeholder="Enter ID number"><br>
+<input type="text" name="uname" placeholder="Enter user Name"><br>
+<input type="password" name="pwd" placeholder="Enter Password"><br>
+<input type="text" name="fname" placeholder="Enter Full Name"><br>
+<input type="text" name="gender" placeholder="Enter gender"><br>
+<input type="text" name="mobile" placeholder="enter mobile"><br>
+<input type="text" name="email" placeholder="enter email"><br>
+<input type="checkbox" name="rules">I Accept Term & Conditions<br>
+<input type="submit" value="Register">&nbsp;&nbsp;<input type="reset" value="Clear">
+</form>
+</center>
+</body> 
+</html>
